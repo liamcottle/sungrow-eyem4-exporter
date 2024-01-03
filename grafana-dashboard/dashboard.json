@@ -1,0 +1,1818 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 5,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+      },
+      "description": "So far today",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "kwatth"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 0,
+        "y": 0
+      },
+      "id": 10,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_realtime_data_daily_yield{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Daily Yield",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+      },
+      "description": "Lifetime yield so far",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "kwatth"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 3,
+        "y": 0
+      },
+      "id": 11,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_realtime_data_total_yield{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Yield",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 0
+              }
+            ]
+          },
+          "unit": "kwatt"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 3,
+        "x": 6,
+        "y": 0
+      },
+      "id": 7,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_realtime_data_feedin_power{ip=\"192.168.1.175\", device_type=\"18\"}",
+          "hide": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Feed-in Power",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 0
+              }
+            ]
+          },
+          "unit": "kwatt"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 3,
+        "x": 9,
+        "y": 0
+      },
+      "id": 8,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_realtime_data_total_dc_power{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total DC Power",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "text",
+                "value": null
+              }
+            ]
+          },
+          "unit": "kwatt"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 12,
+        "y": 0
+      },
+      "id": 19,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_realtime_data_active_power{ip=\"192.168.1.175\", device_type=\"18\"}",
+          "hide": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Active Power",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "text",
+                "value": null
+              }
+            ]
+          },
+          "unit": "kvoltampreact"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 15,
+        "y": 0
+      },
+      "id": 9,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_realtime_data_reactive_power{ip=\"192.168.1.175\", device_type=\"18\"}",
+          "hide": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Reactive Power",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "text",
+                "value": null
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 18,
+        "y": 0
+      },
+      "id": 5,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_realtime_data_pf{ip=\"192.168.1.175\", device_type=\"18\"}",
+          "hide": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Power Factor (PF)",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "text",
+                "value": null
+              }
+            ]
+          },
+          "unit": "celsius"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 3,
+        "x": 21,
+        "y": 0
+      },
+      "id": 21,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "exemplar": false,
+          "expr": "eyem4_realtime_data_interior_temperature{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "Interior Temperature",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Interior Temperature",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+      },
+      "description": "$0.13441 per KWh",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "currencyUSD"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 0,
+        "y": 3
+      },
+      "id": 22,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "exemplar": false,
+          "expr": "eyem4_realtime_data_daily_yield{ip=\"192.168.1.175\"} * 0.13441",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "Daily Yield",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Daily Yield",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+      },
+      "description": "$0.13441 per KWh",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "currencyUSD"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 3,
+        "y": 3
+      },
+      "id": 23,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "exemplar": false,
+          "expr": "eyem4_realtime_data_total_yield{ip=\"192.168.1.175\"} * 0.13441",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "Daily Yield",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Yield",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "text",
+                "value": null
+              }
+            ]
+          },
+          "unit": "kwatth"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 12,
+        "y": 3
+      },
+      "id": 12,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_realtime_data_forward_active_energy{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Forward Active Energy",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "text",
+                "value": null
+              }
+            ]
+          },
+          "unit": "kwatth"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 15,
+        "y": 3
+      },
+      "id": 14,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_realtime_data_reverse_active_energy{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Reverse Active Energy",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "text",
+                "value": null
+              }
+            ]
+          },
+          "unit": "kvoltamp"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 18,
+        "y": 3
+      },
+      "id": 20,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_realtime_data_total_apparent_power{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total Apparent Power",
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "kwatth"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 12,
+        "x": 0,
+        "y": 6
+      },
+      "id": 15,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "exemplar": false,
+          "expr": "eyem4_realtime_data_active_power{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "Active Power",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Active Power",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "volt"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 7,
+        "w": 12,
+        "x": 12,
+        "y": 6
+      },
+      "id": 1,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_realtime_data_phase_a_voltage{ip=\"192.168.1.175\", device_type=\"18\"}",
+          "hide": false,
+          "legendFormat": "Phase A",
+          "range": true,
+          "refId": "Phase A Voltage"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_realtime_data_phase_b_voltage{ip=\"192.168.1.175\", device_type=\"18\"}",
+          "hide": false,
+          "legendFormat": "Phase B",
+          "range": true,
+          "refId": "Phase B Voltage"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_realtime_data_phase_c_voltage{ip=\"192.168.1.175\", device_type=\"18\"}",
+          "hide": false,
+          "legendFormat": "Phase C",
+          "range": true,
+          "refId": "Phase C Voltage"
+        }
+      ],
+      "title": "Phase Voltage",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "kwatt"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 12,
+        "x": 0,
+        "y": 11
+      },
+      "id": 18,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "exemplar": false,
+          "expr": "eyem4_realtime_data_total_dc_power{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "instant": false,
+          "legendFormat": "Total DC Power",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Total DC Power",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "amp"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 12,
+        "y": 13
+      },
+      "id": 2,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_realtime_data_phase_a_current{ip=\"192.168.1.175\", device_type=\"18\"}",
+          "hide": false,
+          "legendFormat": "Phase A",
+          "range": true,
+          "refId": "Phase A Current"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_realtime_data_phase_b_current{ip=\"192.168.1.175\", device_type=\"18\"}",
+          "hide": false,
+          "legendFormat": "Phase B",
+          "range": true,
+          "refId": "Phase B Current"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_realtime_data_phase_c_current{ip=\"192.168.1.175\", device_type=\"18\"}",
+          "hide": false,
+          "legendFormat": "Phase C",
+          "range": true,
+          "refId": "Phase C Current"
+        }
+      ],
+      "title": "Phase Current",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "volt"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 0,
+        "y": 16
+      },
+      "id": 16,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_dc_data_mppt1_voltage{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "MPPT 1",
+          "range": true,
+          "refId": "MPPT 1 Voltage"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_dc_data_mppt2_voltage{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "MPPT 2",
+          "range": true,
+          "refId": "MPPT 2 Voltage"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_dc_data_mppt3_voltage{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "MPPT 3",
+          "range": true,
+          "refId": "MPPT 3 Voltage"
+        }
+      ],
+      "title": "MPPT Voltage",
+      "transformations": [],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "kwatt"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 12,
+        "y": 19
+      },
+      "id": 3,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_realtime_data_phase_a_active_power{ip=\"192.168.1.175\", device_type=\"18\"}",
+          "hide": false,
+          "legendFormat": "Phase A",
+          "range": true,
+          "refId": "Phase A Active Power"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_realtime_data_phase_b_active_power{ip=\"192.168.1.175\", device_type=\"18\"}",
+          "hide": false,
+          "legendFormat": "Phase B",
+          "range": true,
+          "refId": "Phase B Active Power"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_realtime_data_phase_c_active_power{ip=\"192.168.1.175\", device_type=\"18\"}",
+          "hide": false,
+          "legendFormat": "Phase C",
+          "range": true,
+          "refId": "Phase C Active Power"
+        }
+      ],
+      "title": "Phase Active Power",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "amp"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 0,
+        "y": 22
+      },
+      "id": 17,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_dc_data_mppt1_current{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "MPPT 1",
+          "range": true,
+          "refId": "MPPT 1 Current"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_dc_data_mppt2_current{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "MPPT 2",
+          "range": true,
+          "refId": "MPPT 2 Current"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_dc_data_mppt3_current{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "MPPT 3",
+          "range": true,
+          "refId": "MPPT 3 Current"
+        }
+      ],
+      "title": "MPPT Current",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "binary": {
+              "left": "MPPT 1",
+              "reducer": "sum",
+              "right": "MPPT 2"
+            },
+            "mode": "reduceRow",
+            "reduce": {
+              "reducer": "sum"
+            }
+          }
+        }
+      ],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "amp"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 12,
+        "y": 25
+      },
+      "id": 25,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_dc_data_string_1_current{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "String 1",
+          "range": true,
+          "refId": "String 1 Current"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_dc_data_string_2_current{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "String 2",
+          "range": true,
+          "refId": "String 2 Current"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_dc_data_string_3_current{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "String 3",
+          "range": true,
+          "refId": "String 3 Current"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_dc_data_string_4_current{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "String 4",
+          "range": true,
+          "refId": "String 4 Current"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_dc_data_string_5_current{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "String 5",
+          "range": true,
+          "refId": "String 5 Current"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_dc_data_string_6_current{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "String 6",
+          "range": true,
+          "refId": "String 6 Current"
+        }
+      ],
+      "title": "PV Current",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "binary": {
+              "left": "MPPT 1",
+              "reducer": "sum",
+              "right": "MPPT 2"
+            },
+            "mode": "reduceRow",
+            "reduce": {
+              "reducer": "sum"
+            }
+          }
+        }
+      ],
+      "type": "timeseries"
+    }
+  ],
+  "refresh": "30s",
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-12h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Sungrow EyeM4 Exporter",
+  "uid": "b63fbfb5-8289-4b54-b6c5-80b93d24ac69",
+  "version": 37,
+  "weekStart": ""
+}
