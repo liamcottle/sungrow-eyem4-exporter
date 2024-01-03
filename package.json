@@ -1,5 +1,5 @@
 {
-  "name": "sungrow-eyem4-exporter",
+  "name": "@liamcottle/sungrow-eyem4-exporter",
   "version": "0.0.1",
   "description": "",
   "main": "src/index.js",
