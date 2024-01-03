@@ -180,7 +180,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 6,
+        "h": 3,
         "w": 3,
         "x": 6,
         "y": 0
@@ -223,6 +223,7 @@
         "type": "prometheus",
         "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
       },
+      "description": "",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -233,16 +234,12 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "red",
-                "value": null
-              },
-              {
                 "color": "green",
-                "value": 0
+                "value": null
               }
             ]
           },
-          "unit": "kwatt"
+          "unit": "kwatth"
         },
         "overrides": []
       },
@@ -252,7 +249,7 @@
         "x": 9,
         "y": 0
       },
-      "id": 8,
+      "id": 26,
       "options": {
         "colorMode": "value",
         "graphMode": "none",
@@ -686,6 +683,135 @@
             "mode": "absolute",
             "steps": [
               {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "amp"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 3,
+        "x": 6,
+        "y": 3
+      },
+      "id": 8,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/^Total$/",
+          "values": false
+        },
+        "textMode": "auto"
+      },
+      "pluginVersion": "9.5.2",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_dc_data_string_1_current{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_dc_data_string_2_current{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_dc_data_string_3_current{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "C"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_dc_data_string_4_current{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "D"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_dc_data_string_5_current{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "E"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_dc_data_string_6_current{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "F"
+        }
+      ],
+      "title": "Total PV Current",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {}
+        }
+      ],
+      "type": "stat"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
                 "color": "text",
                 "value": null
               }
@@ -910,17 +1036,17 @@
               }
             ]
           },
-          "unit": "kwatth"
+          "unit": "amp"
         },
         "overrides": []
       },
       "gridPos": {
-        "h": 5,
+        "h": 6,
         "w": 12,
         "x": 0,
         "y": 6
       },
-      "id": 15,
+      "id": 25,
       "options": {
         "legend": {
           "calcs": [],
@@ -940,16 +1066,90 @@
             "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
           },
           "editorMode": "builder",
-          "exemplar": false,
-          "expr": "eyem4_realtime_data_active_power{ip=\"192.168.1.175\"}",
+          "expr": "eyem4_dc_data_string_1_current{ip=\"192.168.1.175\"}",
           "hide": false,
-          "instant": false,
-          "legendFormat": "Active Power",
+          "legendFormat": "String 1",
           "range": true,
-          "refId": "A"
+          "refId": "String 1 Current"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_dc_data_string_2_current{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "String 2",
+          "range": true,
+          "refId": "String 2 Current"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_dc_data_string_3_current{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "String 3",
+          "range": true,
+          "refId": "String 3 Current"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_dc_data_string_4_current{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "String 4",
+          "range": true,
+          "refId": "String 4 Current"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_dc_data_string_5_current{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "String 5",
+          "range": true,
+          "refId": "String 5 Current"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_dc_data_string_6_current{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "String 6",
+          "range": true,
+          "refId": "String 6 Current"
         }
       ],
-      "title": "Active Power",
+      "title": "PV Current",
+      "transformations": [
+        {
+          "id": "calculateField",
+          "options": {
+            "binary": {
+              "left": "MPPT 1",
+              "reducer": "sum",
+              "right": "MPPT 2"
+            },
+            "mode": "reduceRow",
+            "reduce": {
+              "reducer": "sum"
+            }
+          }
+        }
+      ],
       "type": "timeseries"
     },
     {
@@ -1116,7 +1316,7 @@
               }
             ]
           },
-          "unit": "kwatt"
+          "unit": "kwatth"
         },
         "overrides": []
       },
@@ -1124,9 +1324,9 @@
         "h": 5,
         "w": 12,
         "x": 0,
-        "y": 11
+        "y": 12
       },
-      "id": 18,
+      "id": 15,
       "options": {
         "legend": {
           "calcs": [],
@@ -1147,15 +1347,15 @@
           },
           "editorMode": "builder",
           "exemplar": false,
-          "expr": "eyem4_realtime_data_total_dc_power{ip=\"192.168.1.175\"}",
+          "expr": "eyem4_realtime_data_active_power{ip=\"192.168.1.175\"}",
           "hide": false,
           "instant": false,
-          "legendFormat": "Total DC Power",
+          "legendFormat": "Active Power",
           "range": true,
           "refId": "A"
         }
       ],
-      "title": "Total DC Power",
+      "title": "Active Power",
       "type": "timeseries"
     },
     {
@@ -1322,17 +1522,17 @@
               }
             ]
           },
-          "unit": "volt"
+          "unit": "kwatt"
         },
         "overrides": []
       },
       "gridPos": {
-        "h": 6,
+        "h": 5,
         "w": 12,
         "x": 0,
-        "y": 16
+        "y": 17
       },
-      "id": 16,
+      "id": 18,
       "options": {
         "legend": {
           "calcs": [],
@@ -1352,39 +1552,16 @@
             "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
           },
           "editorMode": "builder",
-          "expr": "eyem4_dc_data_mppt1_voltage{ip=\"192.168.1.175\"}",
+          "exemplar": false,
+          "expr": "eyem4_realtime_data_total_dc_power{ip=\"192.168.1.175\"}",
           "hide": false,
-          "legendFormat": "MPPT 1",
+          "instant": false,
+          "legendFormat": "Total DC Power",
           "range": true,
-          "refId": "MPPT 1 Voltage"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
-          },
-          "editorMode": "builder",
-          "expr": "eyem4_dc_data_mppt2_voltage{ip=\"192.168.1.175\"}",
-          "hide": false,
-          "legendFormat": "MPPT 2",
-          "range": true,
-          "refId": "MPPT 2 Voltage"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
-          },
-          "editorMode": "builder",
-          "expr": "eyem4_dc_data_mppt3_voltage{ip=\"192.168.1.175\"}",
-          "hide": false,
-          "legendFormat": "MPPT 3",
-          "range": true,
-          "refId": "MPPT 3 Voltage"
+          "refId": "A"
         }
       ],
-      "title": "MPPT Voltage",
-      "transformations": [],
+      "title": "Total DC Power",
       "type": "timeseries"
     },
     {
@@ -1551,7 +1728,7 @@
               }
             ]
           },
-          "unit": "amp"
+          "unit": "volt"
         },
         "overrides": []
       },
@@ -1560,6 +1737,121 @@
         "w": 12,
         "x": 0,
         "y": 22
+      },
+      "id": 16,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_dc_data_mppt1_voltage{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "MPPT 1",
+          "range": true,
+          "refId": "MPPT 1 Voltage"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_dc_data_mppt2_voltage{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "MPPT 2",
+          "range": true,
+          "refId": "MPPT 2 Voltage"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+          },
+          "editorMode": "builder",
+          "expr": "eyem4_dc_data_mppt3_voltage{ip=\"192.168.1.175\"}",
+          "hide": false,
+          "legendFormat": "MPPT 3",
+          "range": true,
+          "refId": "MPPT 3 Voltage"
+        }
+      ],
+      "title": "MPPT Voltage",
+      "transformations": [],
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "amp"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 12,
+        "x": 0,
+        "y": 28
       },
       "id": 17,
       "options": {
@@ -1630,172 +1922,6 @@
         }
       ],
       "type": "timeseries"
-    },
-    {
-      "datasource": {
-        "type": "prometheus",
-        "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 0,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "auto",
-            "spanNulls": false,
-            "stacking": {
-              "group": "A",
-              "mode": "none"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              }
-            ]
-          },
-          "unit": "amp"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 12,
-        "x": 12,
-        "y": 25
-      },
-      "id": 25,
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
-      },
-      "targets": [
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
-          },
-          "editorMode": "builder",
-          "expr": "eyem4_dc_data_string_1_current{ip=\"192.168.1.175\"}",
-          "hide": false,
-          "legendFormat": "String 1",
-          "range": true,
-          "refId": "String 1 Current"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
-          },
-          "editorMode": "builder",
-          "expr": "eyem4_dc_data_string_2_current{ip=\"192.168.1.175\"}",
-          "hide": false,
-          "legendFormat": "String 2",
-          "range": true,
-          "refId": "String 2 Current"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
-          },
-          "editorMode": "builder",
-          "expr": "eyem4_dc_data_string_3_current{ip=\"192.168.1.175\"}",
-          "hide": false,
-          "legendFormat": "String 3",
-          "range": true,
-          "refId": "String 3 Current"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
-          },
-          "editorMode": "builder",
-          "expr": "eyem4_dc_data_string_4_current{ip=\"192.168.1.175\"}",
-          "hide": false,
-          "legendFormat": "String 4",
-          "range": true,
-          "refId": "String 4 Current"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
-          },
-          "editorMode": "builder",
-          "expr": "eyem4_dc_data_string_5_current{ip=\"192.168.1.175\"}",
-          "hide": false,
-          "legendFormat": "String 5",
-          "range": true,
-          "refId": "String 5 Current"
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "a7b09aac-fef8-46de-ab95-3e0d703505d9"
-          },
-          "editorMode": "builder",
-          "expr": "eyem4_dc_data_string_6_current{ip=\"192.168.1.175\"}",
-          "hide": false,
-          "legendFormat": "String 6",
-          "range": true,
-          "refId": "String 6 Current"
-        }
-      ],
-      "title": "PV Current",
-      "transformations": [
-        {
-          "id": "calculateField",
-          "options": {
-            "binary": {
-              "left": "MPPT 1",
-              "reducer": "sum",
-              "right": "MPPT 2"
-            },
-            "mode": "reduceRow",
-            "reduce": {
-              "reducer": "sum"
-            }
-          }
-        }
-      ],
-      "type": "timeseries"
     }
   ],
   "refresh": "30s",
@@ -1806,13 +1932,13 @@
     "list": []
   },
   "time": {
-    "from": "now-12h",
+    "from": "now-6h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Sungrow EyeM4 Exporter",
   "uid": "b63fbfb5-8289-4b54-b6c5-80b93d24ac69",
-  "version": 37,
+  "version": 41,
   "weekStart": ""
 }
