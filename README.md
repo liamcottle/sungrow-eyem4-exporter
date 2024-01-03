@@ -50,3 +50,9 @@ You will need to add a scrape job to your `prometheus.yml` config file.
 ```
 
 > NOTE: Make sure to replace `1.2.3.4` with the IP address of the server running the exporter and `8080` with the listen port you set with `--listen-port`.
+
+## How to add to Grafana?
+
+You can download and import the [dashboard.json](grafana-dashboard/dashboard.json) into your Grafana instance.
+
+> NOTE: You will need to update each of the metrics to pull from the correct IP address.
