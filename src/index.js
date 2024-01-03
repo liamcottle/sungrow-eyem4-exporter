@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const slug = require('slug');
 const express = require('express');
 const commandLineArgs = require('command-line-args');
