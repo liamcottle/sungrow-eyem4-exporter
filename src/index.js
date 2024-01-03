@@ -4,6 +4,32 @@ const commandLineArgs = require('command-line-args');
 const commandLineUsage = require('command-line-usage');
 const Client = require('@liamcottle/sungrow-eyem4-api');
 
+const METRICS_NAMESPACE = "eyem4";
+
+function formatMetricName(name) {
+    const cleanMetricName = slug(name, "_");
+    return `${METRICS_NAMESPACE}_${cleanMetricName}`;
+}
+
+function formatMetricLabels(labels) {
+
+    const formattedLabels = Object.entries(labels).map(([label, value]) => {
+        return `${label}="${value}"`;
+    }).join(" ");
+
+    return "{" + formattedLabels + "}";
+
+}
+
+function formatMetric(name, type, labels, value) {
+    const formattedMetricName = formatMetricName(name);
+    const formattedMetricLabels = formatMetricLabels(labels);
+    return [
+        `# TYPE ${formattedMetricName} ${type}`,
+        `${formattedMetricName}${formattedMetricLabels} ${value}`,
+    ].join("\n");
+}
+
 function showUsage() {
     const usage = commandLineUsage([
         {
@@ -97,22 +123,24 @@ async function getMetrics(ip, timeout = 10000) {
 
                 // state
                 const state = await client.getState();
-                lines.push(`# TYPE eyem4_state_alarm gauge`);
-                lines.push(`eyem4_state_total_alarm{ip="${ip}"} ${state.total_alarm}`);
-                lines.push(`# TYPE eyem4_state_total_fault gauge`);
-                lines.push(`eyem4_state_total_fault{ip="${ip}"} ${state.total_fault}`);
+                lines.push(formatMetric("state_total_alarm", "gauge", { "ip": ip }, state.total_alarm));
+                lines.push(formatMetric("state_total_fault", "gauge", { "ip": ip }, state.total_fault));
 
                 // realtime data
                 const devices = await client.getDeviceList();
                 for(const device of devices.list){
                     const response = await client.getDeviceRealtimeData(device.id);
                     for(const item of response.list){
-                        const dataValue = item.data_value;
-                        if(!isNaN(dataValue)){
-                            const cleanDataName = slug(item.data_name, "_");
-                            const metricName = `eyem4_realtime_data_${cleanDataName}`;
-                            lines.push(`# TYPE ${metricName} gauge`);
-                            lines.push(`${metricName}{ip="${ip}" device_id="${device.id}" device_type="${device.dev_type}" device_sn="${device.dev_sn}" device_name="${device.dev_name}" device_model="${device.dev_model}" device_port_name="${device.port_name}"} ${dataValue}`);
+                        if(!isNaN(item.data_value)){
+                            lines.push(formatMetric(`realtime_data_${item.data_name}`, "gauge", {
+                                "ip": ip,
+                                "device_id": device.id,
+                                "device_type": device.dev_type,
+                                "device_sn": device.dev_sn,
+                                "device_name": device.dev_name,
+                                "device_model": device.dev_model,
+                                "device_port_name": device.port_name,
+                            }, item.data_value));
                         }
                     }
                 }
@@ -121,19 +149,22 @@ async function getMetrics(ip, timeout = 10000) {
                 const response = await client.getDeviceDCData(1); // fixme
                 for(const item of response.list){
 
-                    const cleanDataName = slug(item.name, "_");
-                    const metricName = `eyem4_dc_data_${cleanDataName}`;
+                    const metricName = `dc_data_${item.name}`;
 
                     // voltage
                     if(!isNaN(item.voltage)){
-                        lines.push(`# TYPE ${metricName}_voltage gauge`);
-                        lines.push(`${metricName}_voltage{ip="${ip}" device_id="1"} ${item.voltage}`);
+                        lines.push(formatMetric(`${metricName}_voltage`, "gauge", {
+                            "ip": ip,
+                            "device_id": 1,
+                        }, item.voltage));
                     }
 
                     // current
                     if(!isNaN(item.current)){
-                        lines.push(`# TYPE ${metricName}_current gauge`);
-                        lines.push(`${metricName}_current{ip="${ip}" device_id="1"} ${item.current}`);
+                        lines.push(formatMetric(`${metricName}_current`, "gauge", {
+                            "ip": ip,
+                            "device_id": 1,
+                        }, item.current));
                     }
 
                 }
