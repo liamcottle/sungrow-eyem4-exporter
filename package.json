@@ -1,0 +1,21 @@
+{
+  "name": "sungrow-eyem4-exporter",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/index.js",
+  "bin": {
+    "sungrow-eyem4-exporter": "src/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@liamcottle/sungrow-eyem4-api": "^0.0.5",
+    "command-line-args": "^5.2.1",
+    "command-line-usage": "^7.0.1",
+    "express": "^4.18.2",
+    "slug": "^8.2.3"
+  }
+}
