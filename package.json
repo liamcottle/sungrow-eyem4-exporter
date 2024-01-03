@@ -1,7 +1,7 @@
 {
   "name": "@liamcottle/sungrow-eyem4-exporter",
   "version": "0.0.1",
-  "description": "",
+  "description": "A Prometheus exporter and Grafana dashboard for the Sungrow EyeM4 Dongle.",
   "main": "src/index.js",
   "bin": {
     "sungrow-eyem4-exporter": "src/index.js"
