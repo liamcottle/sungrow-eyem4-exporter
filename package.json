@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@liamcottle/sungrow-eyem4-api": "^0.0.5",
     "command-line-args": "^5.2.1",
