@@ -14,7 +14,7 @@ The exporter uses [@liamcottle/sungrow-eyem4-api](https://github.com/liamcottle/
 You can run the latest version of the exporter with `npx`, or you can download the package manually and run from source.
 
 ```
-npx @liamcottle/sungrow-eyem4-exporter serve --ip 192.168.1.175 --listen-port 8080
+npx @liamcottle/sungrow-eyem4-exporter@latest serve --ip 192.168.1.175 --listen-port 8080
 ```
 
 ```
