@@ -129,43 +129,46 @@ async function getMetrics(ip, timeout = 10000) {
                 // realtime data
                 const devices = await client.getDeviceList();
                 for(const device of devices.list){
-                    const response = await client.getDeviceRealtimeData(device.id);
-                    for(const item of response.list){
-                        if(!isNaN(item.data_value)){
-                            lines.push(formatMetric(`realtime_data_${item.data_name}`, "gauge", {
-                                "ip": ip,
-                                "device_id": device.id,
-                                "device_type": device.dev_type,
-                                "device_sn": device.dev_sn,
-                                "device_name": device.dev_name,
-                                "device_model": device.dev_model,
-                                "device_port_name": device.port_name,
-                            }, item.data_value));
+
+                    const metricLabels = {
+                        "ip": ip,
+                        "device_id": device.id,
+                        "device_type": device.dev_type,
+                        "device_sn": device.dev_sn,
+                        "device_name": device.dev_name,
+                        "device_model": device.dev_model,
+                        "device_port_name": device.port_name,
+                    };
+
+                    // attempt to fetch realtime data
+                    try {
+                        const response = await client.getDeviceRealtimeData(device.id);
+                        for(const item of response.list){
+                            if(!isNaN(item.data_value)){
+                                lines.push(formatMetric(`realtime_data_${item.data_name}`, "gauge", metricLabels, item.data_value));
+                            }
                         }
-                    }
-                }
+                    } catch(_) {}
 
-                // dc data
-                const response = await client.getDeviceDCData(1); // fixme
-                for(const item of response.list){
+                    // attempt to fetch dc data
+                    try {
+                        const response = await client.getDeviceDCData(device.id);
+                        for(const item of response.list){
 
-                    const metricName = `dc_data_${item.name}`;
+                            const metricName = `dc_data_${item.name}`;
 
-                    // voltage
-                    if(!isNaN(item.voltage)){
-                        lines.push(formatMetric(`${metricName}_voltage`, "gauge", {
-                            "ip": ip,
-                            "device_id": 1,
-                        }, item.voltage));
-                    }
+                            // voltage
+                            if(!isNaN(item.voltage)){
+                                lines.push(formatMetric(`${metricName}_voltage`, "gauge", metricLabels, item.voltage));
+                            }
 
-                    // current
-                    if(!isNaN(item.current)){
-                        lines.push(formatMetric(`${metricName}_current`, "gauge", {
-                            "ip": ip,
-                            "device_id": 1,
-                        }, item.current));
-                    }
+                            // current
+                            if(!isNaN(item.current)){
+                                lines.push(formatMetric(`${metricName}_current`, "gauge", metricLabels, item.current));
+                            }
+
+                        }
+                    } catch(_) {}
 
                 }
 
